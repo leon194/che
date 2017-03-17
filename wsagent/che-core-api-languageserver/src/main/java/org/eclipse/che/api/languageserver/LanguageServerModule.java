@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.che.api.languageserver;
 
+import com.google.inject.AbstractModule;
+
 import org.eclipse.che.api.languageserver.messager.InitializeEventMessenger;
 import org.eclipse.che.api.languageserver.messager.PublishDiagnosticsParamsMessenger;
 import org.eclipse.che.api.languageserver.messager.ShowMessageMessenger;
@@ -20,11 +22,7 @@ import org.eclipse.che.api.languageserver.registry.ServerInitializerImpl;
 import org.eclipse.che.api.languageserver.service.LanguageRegistryService;
 import org.eclipse.che.api.languageserver.service.TextDocumentService;
 import org.eclipse.che.api.languageserver.service.WorkspaceService;
-import org.eclipse.che.inject.DynaModule;
 
-import com.google.inject.AbstractModule;
-
-@DynaModule
 public class LanguageServerModule extends AbstractModule {
 
     @Override

@@ -58,17 +58,16 @@ public class WsAgentModule extends AbstractModule {
         bind(PreferenceDao.class).to(org.eclipse.che.RemotePreferenceDao.class);
 
         bind(OAuthTokenProvider.class).to(RemoteOAuthTokenProvider.class);
-        //bind(SshServiceClient.class).to(HttpSshServiceClient.class);
-//
-//        bind(org.eclipse.che.plugin.ssh.key.script.SshKeyProvider.class)
-//                .to(org.eclipse.che.plugin.ssh.key.script.SshKeyProviderImpl.class);
+
 
         install(new CoreRestModule());
         install(new FileCleanerModule());
         install(new ProjectApiModule());
         //install(new org.eclipse.che.swagger.deploy.DocsModule());
-        install(new org.eclipse.che.api.debugger.server.DebuggerModule());
+        //      install(new org.eclipse.che.api.debugger.server.DebuggerModule());
         install(new org.eclipse.che.commons.schedule.executor.ScheduleModule());
+//        install(new org.eclipse.che.api.languageserver.LanguageServerModule());
+        install(new org.eclipse.che.plugin.ssh.key.SshModule());
 
         bind(GitUserResolver.class).to(LocalGitUserResolver.class);
         bind(GitConnectionFactory.class).to(JGitConnectionFactory.class);
