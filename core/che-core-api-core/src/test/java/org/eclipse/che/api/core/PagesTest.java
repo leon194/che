@@ -56,12 +56,7 @@ public class PagesTest {
         assertEquals(result, testSource.strings);
     }
 
-    @Test
-    public void eagerlyIteratesAllElements() {
-        ArrayList<String> result = Lists.newArrayList(Pages.iterate(testSource::getStrings, 2));
-
-        assertEquals(result, testSource.strings);
-    }
+   
 
     @Test
     public void lazyStreamsAllElements() {
