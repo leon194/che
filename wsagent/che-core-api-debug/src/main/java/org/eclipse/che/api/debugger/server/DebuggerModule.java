@@ -15,12 +15,14 @@ import com.google.inject.multibindings.Multibinder;
 import com.google.inject.name.Names;
 
 import org.eclipse.che.api.debug.shared.dto.action.ActionDto;
+import org.eclipse.che.inject.DynaModule;
 
 /**
  * The module that contains configuration of the server side part of the Debugger.
  *
  * @author Anatoliy Bazko
  */
+@DynaModule
 public class DebuggerModule extends AbstractModule {
 
     @Override
